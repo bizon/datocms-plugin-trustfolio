@@ -1,0 +1,79 @@
+{
+  "name": "datocms-plugin-trustfolio",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@types/node": "^16.11.25",
+    "@types/react": "^17.0.39",
+    "@types/react-dom": "^17.0.11",
+    "datocms-plugin-sdk": "^0.5.2",
+    "datocms-react-ui": "^0.5.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "5.0.0",
+    "typescript": "^4.5.5"
+  },
+  "scripts": {
+    "start": "cross-env BROWSER='none' PUBLIC_URL='/' react-scripts start",
+    "build": "cross-env PUBLIC_URL='.' react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "prepublishOnly": "npm run build"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "xo": "^0.48.0"
+  },
+  "xo": {
+    "semicolon": false,
+    "space": 2,
+    "prettier": true,
+    "envs": [
+      "browser"
+    ],
+    "rules": {
+      "@typescript-eslint/no-floating-promises": "off",
+      "@typescript-eslint/naming-convention": "off",
+      "@typescript-eslint/no-unsafe-argument": "off",
+      "@typescript-eslint/no-unsafe-assignment": "off",
+      "@typescript-eslint/no-unsafe-call": "off",
+      "@typescript-eslint/no-unsafe-member-access": "off",
+      "@typescript-eslint/no-unsafe-return": "off",
+      "@typescript-eslint/restrict-template-expressions": "off",
+      "@typescript-eslint/triple-slash-reference": "off",
+      "camelcase": "warn",
+      "import/extensions": "off",
+      "react/boolean-prop-naming": "off",
+      "unicorn/no-array-reduce": "off",
+      "unicorn/prefer-node-protocol": "off",
+      "unicorn/prevent-abbreviations": "off"
+    }
+  },
+  "prettier": {
+    "printWidth": 100,
+    "jsxSingleQuote": true
+  },
+  "datoCmsPlugin": {
+    "title": "",
+    "previewImage": "",
+    "coverImage": "",
+    "entryPoint": "build/index.html"
+  }
+}
