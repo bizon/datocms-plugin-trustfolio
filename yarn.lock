@@ -3861,6 +3861,11 @@ eslint-config-react-app@^7.0.0:
     eslint-plugin-react-hooks "^4.3.0"
     eslint-plugin-testing-library "^5.0.1"
 
+eslint-config-xo-react@^0.26.0:
+  version "0.26.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-xo-react/-/eslint-config-xo-react-0.26.0.tgz#8e3a50fe95b44ecaf832072d0e2a3ac3fc07fab2"
+  integrity sha512-vOcDWLrJDvkyprTHEalBwbPk01YH1Y9x3GPR+ZMhBWcIRQCP8wzcAUfsRQ6jXD2mal0Ywt+x0DWGMb+9RpvT5A==
+
 eslint-config-xo-typescript@^0.50.0:
   version "0.50.0"
   resolved "https://registry.yarnpkg.com/eslint-config-xo-typescript/-/eslint-config-xo-typescript-0.50.0.tgz#59a0a704fbd667592ca3ddcc599b9f8c855e4ebe"

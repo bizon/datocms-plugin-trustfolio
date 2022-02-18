@@ -42,9 +42,11 @@
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
+    "eslint-config-xo-react": "^0.26.0",
     "xo": "^0.48.0"
   },
   "xo": {
+    "extends": "xo-react",
     "semicolon": false,
     "space": 2,
     "prettier": true,
@@ -52,21 +54,15 @@
       "browser"
     ],
     "rules": {
-      "@typescript-eslint/no-floating-promises": "off",
-      "@typescript-eslint/naming-convention": "off",
       "@typescript-eslint/no-unsafe-argument": "off",
       "@typescript-eslint/no-unsafe-assignment": "off",
       "@typescript-eslint/no-unsafe-call": "off",
       "@typescript-eslint/no-unsafe-member-access": "off",
       "@typescript-eslint/no-unsafe-return": "off",
-      "@typescript-eslint/restrict-template-expressions": "off",
       "@typescript-eslint/triple-slash-reference": "off",
-      "camelcase": "warn",
       "import/extensions": "off",
       "react/boolean-prop-naming": "off",
-      "unicorn/no-array-reduce": "off",
-      "unicorn/prefer-node-protocol": "off",
-      "unicorn/prevent-abbreviations": "off"
+      "unicorn/prefer-node-protocol": "off"
     }
   },
   "prettier": {

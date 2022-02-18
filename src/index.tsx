@@ -1,9 +1,11 @@
+import React from 'react'
 import {connect} from 'datocms-plugin-sdk'
-import {render} from './utils/render'
-import ConfigScreen from './entrypoints/config-screen'
 import 'datocms-react-ui/styles.css'
 
-connect({
+import {render} from './utils/render'
+import ConfigScreen from './entrypoints/config-screen'
+
+void connect({
   renderConfigScreen(ctx) {
     render(<ConfigScreen ctx={ctx} />)
   },
