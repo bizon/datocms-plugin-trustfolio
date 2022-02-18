@@ -1,8 +1,8 @@
 # Deployment
-.vercel
+.vercel/
 
 # Node.js
-node_modules
+node_modules/
 
 # Env
 .env*
@@ -11,3 +11,6 @@ node_modules
 # Temporary
 *.log
 *.tsbuildinfo
+
+# Build
+build/
