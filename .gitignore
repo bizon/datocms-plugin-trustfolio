@@ -1,0 +1,13 @@
+# Deployment
+.vercel
+
+# Node.js
+node_modules
+
+# Env
+.env*
+!.env.sample
+
+# Temporary
+*.log
+*.tsbuildinfo
