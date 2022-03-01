@@ -10,19 +10,21 @@ export type ValidParameters = {
 
 export type ConfigParameters = FirstInstallationParameters | ValidParameters
 
+export type OnSelectType = (value?: any) => void
+
 export type EmptyProps = {
   ctx: RenderFieldExtensionCtx
   onSelect: OnSelectType
 }
 
+export type ValueProps = {
+  value: ReviewProps
+  onReset: () => void
+}
+
 export type CardProps = {
   value: ReviewProps
   onSelect: (value: any) => void
-}
-
-export type ValueProps = {
-  value: any
-  onReset: (id: string) => void
 }
 
 export type ReviewProps = {
@@ -36,52 +38,4 @@ export type ReviewProps = {
       m: string
     }
   }
-}
-
-export type OnSelectType = (value: any) => void
-
-export type State = {
-  searches: Record<string, any>
-  query: string
-  forms: Record<string, Form>
-  themes: Record<string, Theme>
-  results: Record<string, Result>
-}
-
-export type Form = {
-  id: string
-  title: string
-  result: Form | undefined
-  status: string
-  fields: Array<Record<string, unknown>>
-  code?: string
-  welcome_screens: [
-    {
-      title: string
-      attachment: {
-        href: string
-      }
-    },
-  ]
-  theme?: {
-    href: string
-    background: {href: string}
-    colors: {background: string; question: string}
-  }
-  _links: {
-    display: string
-  }
-}
-
-export type Theme = {
-  id: string
-  result: Theme
-  status: string
-}
-
-export type Result = {
-  id: string
-  result: Result
-  status: string
-  total_items: number
 }

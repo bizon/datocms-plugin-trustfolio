@@ -57,7 +57,7 @@ void connect({
     render(<FieldExtension ctx={ctx} />)
   },
   renderModal(modalId: string, ctx: RenderModalCtx) {
-    if (modalId === 'browseProducts') {
+    if (modalId === 'browseTrustfolioReviews') {
       render(<BrowseProductsModal ctx={ctx} />)
     } else {
       render(null)

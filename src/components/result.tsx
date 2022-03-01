@@ -1,6 +1,6 @@
 import {RenderFieldExtensionCtx} from 'datocms-plugin-sdk'
 import React, {useEffect, useState} from 'react'
-import get from 'lodash-es/get'
+import get from 'lodash/get'
 
 import {OnSelectType} from '../types'
 
@@ -29,19 +29,10 @@ const Result = ({ctx}: PropTypes) => {
     await ctx.setFieldValue(ctx.fieldPath, value ? JSON.stringify(value) : '')
   }
 
-  const handleReset: OnSelectType = async (id) => {
-    if (!value) {
-      return
-    }
-
-    const reviews = JSON.parse(value)
-    const removeIndex = reviews.findIndex((review: any) => review.id === id)
-    reviews.splice(removeIndex, 1)
-
-    await ctx.setFieldValue(ctx.fieldPath, reviews.length > 0 ? JSON.stringify(reviews) : '')
+  const handleReset: OnSelectType = async () => {
+    await ctx.setFieldValue(ctx.fieldPath, null)
   }
 
-  // Console.log('value:', value)
   return value ? (
     <Value value={JSON.parse(value)} onReset={handleReset} />
   ) : (

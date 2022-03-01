@@ -4,7 +4,7 @@ import {Button, Canvas, TextField, Form, FieldGroup} from 'datocms-react-ui'
 import {Form as FormHandler, Field} from 'react-final-form'
 
 import {ConfigParameters} from '../types'
-import s from './styles.module.css'
+import style from './styles.module.css'
 
 type Props = {
   ctx: RenderConfigScreenCtx
@@ -13,7 +13,7 @@ type Props = {
 const ConfigScreen = ({ctx}: Props) => {
   return (
     <Canvas ctx={ctx}>
-      <div className={s.inspector}>
+      <div className={style.inspector}>
         <FormHandler<ConfigParameters>
           initialValues={ctx.plugin.attributes.parameters}
           validate={(values: ConfigParameters) => {
@@ -61,7 +61,7 @@ const ConfigScreen = ({ctx}: Props) => {
                       id='corsUrlPrefix'
                       label='CORS proxy service'
                       placeholder='CORS proxy service'
-                      hint='Since Typeform API does not support CORS, a CORS proxy is required.'
+                      hint='Since Trustfolio API does not support CORS, a CORS proxy is required.'
                       error={error}
                       {...input}
                     />

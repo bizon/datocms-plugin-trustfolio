@@ -15,6 +15,7 @@ const Card = ({value, onSelect}: CardProps) => {
           className={style.card__form__image}
           style={{
             backgroundImage: `url(${value.organization.picture.m})`,
+            backgroundRepeat: 'no-repeat',
           }}
         />
         <div className={style.card__form__info}>
@@ -26,7 +27,6 @@ const Card = ({value, onSelect}: CardProps) => {
           </div>
         </div>
       </div>
-      {/* <button type='button' className={style.value__reset} onClick={onReset} /> */}
     </div>
   )
 }

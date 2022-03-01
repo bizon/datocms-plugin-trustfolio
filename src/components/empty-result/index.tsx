@@ -7,8 +7,8 @@ import style from './styles.module.css'
 const Empty = ({ctx, onSelect}: EmptyProps) => {
   const handleOpenModal = async () => {
     const result = await ctx.openModal({
-      id: 'browseProducts',
-      title: 'Browse Trustfolio reviews',
+      id: 'browseTrustfolioReviews',
+      title: 'Browse Trustfolio Reviews',
       width: 'l',
     })
 

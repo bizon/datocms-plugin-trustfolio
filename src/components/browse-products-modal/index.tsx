@@ -1,8 +1,8 @@
 import {RenderModalCtx} from 'datocms-plugin-sdk'
-import React, {useEffect, useMemo, useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import {Button, TextInput, Canvas} from 'datocms-react-ui'
 import {deburr, sortBy} from 'lodash'
-import {OnSelectType, ReviewProps} from '../../types'
+import {ReviewProps} from '../../types'
 import {fetchTrustfolioData} from '../../utils/references'
 import style from './styles.module.css'
 
@@ -10,8 +10,8 @@ import Card from './card'
 
 const BrowseProductsModal = ({ctx}: {ctx: RenderModalCtx}) => {
   const [searchValue, setSearchValue] = useState<string>('')
-  const [selectedReviews, setSelectedReviews] = useState<any[]>([])
   const [data, setData] = useState<any[]>([])
+  const [filteredReviews, setFilterReviews] = useState<any[]>([])
   const [isLoading, setLoading] = useState(false)
 
   const apiToken = ctx.plugin.attributes.parameters.apiToken as string
@@ -35,26 +35,15 @@ const BrowseProductsModal = ({ctx}: {ctx: RenderModalCtx}) => {
     })
   }, [apiToken, corsUrlPrefix, locales])
 
-  const handleValidation = async () => {
-    await ctx.resolve(selectedReviews)
+  const handleValidation = async (review: ReviewProps) => {
+    await ctx.resolve(review)
   }
 
-  // Const handleReset: OnSelectType = (id) => {
-  //   const reviews = selectedReviews
-  //   const removeIndex = reviews.findIndex((review: any) => review.id === id)
-  //   reviews.splice(removeIndex, 1)
-  //
-  //   setSelectedReviews(reviews)
-  // }
-
-  const handleSelect: OnSelectType = (review) => {
-    setSelectedReviews([...selectedReviews, review])
-  }
-
-  const renderedResults = useMemo(() => {
-    return data
-      .filter((review: ReviewProps) => review.organization.name.includes(searchValue))
-      .map((review: ReviewProps) => <Card key={review.id} value={review} onSelect={handleSelect} />)
+  useEffect(() => {
+    const filteredData = data.filter((review: ReviewProps) =>
+      review.organization.name.toLowerCase().includes(searchValue.toLowerCase()),
+    )
+    setFilterReviews(filteredData)
   }, [searchValue, data])
 
   return (
@@ -73,19 +62,22 @@ const BrowseProductsModal = ({ctx}: {ctx: RenderModalCtx}) => {
           </div>
           <Button
             type='submit'
-            buttonType='negative'
+            buttonType='primary'
             buttonSize='s'
             className={style.button}
             disabled={isLoading}
-            onClick={() => {
-              void handleValidation()
-            }}
           >
             Validate
           </Button>
         </form>
         <div className={isLoading ? style.empty__forms__loading : style.empty__forms}>
-          {isLoading ? <div>Loading...</div> : renderedResults}
+          {isLoading ? (
+            <p>Reviews are loading...</p>
+          ) : (
+            filteredReviews.map((review: ReviewProps) => (
+              <Card key={review.meta.social.url} value={review} onSelect={handleValidation} />
+            ))
+          )}
         </div>
       </div>
     </Canvas>
