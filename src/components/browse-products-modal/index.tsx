@@ -1,12 +1,15 @@
 import {RenderModalCtx} from 'datocms-plugin-sdk'
 import React, {useEffect, useState} from 'react'
-import {Button, TextInput, Canvas} from 'datocms-react-ui'
+import {TextInput, Canvas} from 'datocms-react-ui'
 import {deburr, sortBy} from 'lodash'
-import {ReviewProps} from '../../types'
+
+import {ReviewProps, SelectReviewProps} from '../../types'
+import {groupReviewsById} from '../../utils/group-reviews-by-id'
 import {fetchTrustfolioData} from '../../utils/references'
-import style from './styles.module.css'
 
 import Card from './card'
+
+import style from './styles.module.css'
 
 const BrowseProductsModal = ({ctx}: {ctx: RenderModalCtx}) => {
   const [searchValue, setSearchValue] = useState<string>('')
@@ -29,8 +32,12 @@ const BrowseProductsModal = ({ctx}: {ctx: RenderModalCtx}) => {
       return Promise.all(arrayOfPromises)
     }
 
-    void getReferences().then((data) => {
-      setData(sortBy(data.flat(), ({organization}) => deburr(organization.name).toLowerCase()))
+    void getReferences().then(async (data) => {
+      const result = await groupReviewsById(data.flat())
+
+      setData(
+        sortBy(result, (review: ReviewProps) => deburr(review.organization.name).toLowerCase()),
+      )
       setLoading(false)
     })
   }, [apiToken, corsUrlPrefix, locales])
@@ -60,22 +67,13 @@ const BrowseProductsModal = ({ctx}: {ctx: RenderModalCtx}) => {
               onChange={setSearchValue}
             />
           </div>
-          <Button
-            type='submit'
-            buttonType='primary'
-            buttonSize='s'
-            className={style.button}
-            disabled={isLoading}
-          >
-            Validate
-          </Button>
         </form>
         <div className={isLoading ? style.empty__forms__loading : style.empty__forms}>
           {isLoading ? (
             <p>Reviews are loading...</p>
           ) : (
-            filteredReviews.map((review: ReviewProps) => (
-              <Card key={review.meta.social.url} value={review} onSelect={handleValidation} />
+            filteredReviews.map((review: SelectReviewProps) => (
+              <Card key={review.id} value={review} onSelect={handleValidation} />
             ))
           )}
         </div>

@@ -22,7 +22,7 @@
 }
 
 .value__form__image:before {
-  content: '';
+  content: "";
   display: block;
   padding-top: 100%;
 }
@@ -46,11 +46,11 @@
 }
 
 .value__form__title a:after {
-  content: '';
+  content: "";
   width: 14px;
   height: 14px;
   display: inline-block;
-  background: url('./external-link.svg') center center;
+  background: url("./external-link.svg") center center;
   background-size: contain;
   margin-left: 8px;
   vertical-align: middle;
@@ -64,16 +64,15 @@
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 }
-
 .value__reset {
   position: absolute;
   top: 20px;
   right: 20px;
   width: 20px;
   height: 20px;
+  background: url("./close.svg") center center;
   background-size: contain;
   border: 0;
-  background: transparent url('./close.svg') center center;
   opacity: 0.6;
   transition: opacity 0.2s ease-in-out;
   cursor: pointer;
@@ -82,3 +81,4 @@
 .value__reset:hover {
   opacity: 0.8;
 }
+

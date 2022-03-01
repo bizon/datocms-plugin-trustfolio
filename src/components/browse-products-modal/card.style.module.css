@@ -1,4 +1,5 @@
 .card {
+    width: 100%;
     border: 1px solid var(--border-color);
     text-align: center;
     padding: 20px;
@@ -6,11 +7,6 @@
     transition: opacity 0.2s ease-in-out;
     position: relative;
     margin-bottom: 10px;
-    cursor: pointer;
-}
-
-.card:hover {
-    border-color: var(--accent-color);
 }
 
 .card__form {
@@ -35,6 +31,8 @@
 
 .card__form__info {
     flex: 1;
+    display: flex;
+    flex-direction: column;
     text-align: left;
 }
 
@@ -42,6 +40,8 @@
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 3px;
+    display: flex;
+    align-items: center;
 }
 
 .card__form__title a {
@@ -65,10 +65,18 @@
 }
 
 .card__form__description {
+    display: flex;
+    flex-basis: 50%;
     font-size: 0.9em;
-    overflow: hidden;
-    display: -webkit-box;
-    margin-bottom: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+}
+
+.card__form__description:hover {
+    border: 1px solid var(--accent-color);
 }

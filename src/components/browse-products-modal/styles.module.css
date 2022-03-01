@@ -1,5 +1,4 @@
 .empty {
-  border: 1px solid var(--border-color);
   text-align: center;
   padding: 20px;
 }
@@ -30,8 +29,6 @@
   align-items: stretch;
   justify-content: space-around;
   margin-top: 20px;
-  margin-left: -10px;
-  margin-bottom: -10px;
   opacity: 1;
   transition: opacity 0.2s ease-in-out;
 }

@@ -23,19 +23,42 @@ export type ValueProps = {
 }
 
 export type CardProps = {
-  value: ReviewProps
+  value: SelectReviewProps
   onSelect: (value: any) => void
 }
 
-export type ReviewProps = {
+export type SelectReviewProps = {
   id: string
-  testimony: string
-  sourceLang: string
-  meta: {social: {url: string}}
   organization: {
     name: string
     picture: {
       m: string
     }
   }
+  data: [
+    {
+      testimony: string
+      sourceLang: string
+      meta: {social: {url: string}}
+      organization: {
+        name: string
+        picture: {
+          m: string
+        }
+      }
+    },
+  ]
+}
+
+export type ReviewProps = {
+  id: string
+  organization: {
+    name: string
+    picture: {
+      m: string
+    }
+  }
+  testimony: string
+  sourceLang: string
+  meta: {social: {url: string}}
 }
