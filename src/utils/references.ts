@@ -11,8 +11,8 @@ export async function fetchTrustfolioData(
     },
     body: JSON.stringify({
       query: `
-      query profileByLang($lang: String) {
-          profile(slug: "bizon-zJSAQeAjB", lang: $lang) {
+      query profileByLang($lang: String, $slug: ID!) {
+          profile(slug: $slug, lang: $lang) {
             references {
               sourceLang,
               id

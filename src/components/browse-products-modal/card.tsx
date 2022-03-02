@@ -8,36 +8,37 @@ const Card = ({value, onSelect}: CardProps) => {
       <div className={style.card__form}>
         <div className={style.card__form__info}>
           <div className={style.card__form__title}>
-            <img src={value.organization.picture.m} style={{width: 60, marginRight: '8px'}} />
+            <img src={value.organization.picture.m} className={style.card__form__image} />
             <p>{value.organization.name}</p>
           </div>
 
-          <p style={{marginLeft: '5px'}}>
-            Choose one of customer reviews available in the following languages :
+          <p className={style.card__info__text}>
+            Choose a customer review available in the following languages:
           </p>
 
-          <div style={{display: 'flex'}}>
+          <div className={style.card__review__container}>
             {value.data.length > 0 ? (
               value.data.map((review) => (
                 <div
                   key={review.meta.social.url}
-                  className={style.card__form__description}
+                  className={style.card__form__description__container}
                   onClick={() => {
                     onSelect(review)
                   }}
                 >
                   {review.testimony ? (
-                    <p>“{review.testimony}”</p>
+                    <p className={style.card__form__description}>“{review.testimony}”</p>
                   ) : (
-                    <p>
-                      Sorry, a review exists for this customer in a certain locale but the content
-                      cannot be found
+                    <p className={style.card__form__description}>
+                      <i>There are no customer reviews available right now.</i>
                     </p>
                   )}
                 </div>
               ))
             ) : (
-              <p>Sorry, there is no customer review available right now</p>
+              <p>
+                <i>There are no customer reviews available right now.</i>
+              </p>
             )}
           </div>
         </div>

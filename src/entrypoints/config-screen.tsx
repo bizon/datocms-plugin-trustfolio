@@ -31,6 +31,10 @@ const ConfigScreen = ({ctx}: Props) => {
               errors.locales = 'This field is required!'
             }
 
+            if (!('slug' in values) || !values.slug) {
+              errors.locales = 'This field is required!'
+            }
+
             return errors
           }}
           onSubmit={async (values: ConfigParameters) => {
@@ -62,6 +66,19 @@ const ConfigScreen = ({ctx}: Props) => {
                       label='CORS proxy service'
                       placeholder='CORS proxy service'
                       hint='Since Trustfolio API does not support CORS, a CORS proxy is required.'
+                      error={error}
+                      {...input}
+                    />
+                  )}
+                </Field>
+                <Field name='slug'>
+                  {({input, meta: {error}}) => (
+                    <TextField
+                      required
+                      id='slug'
+                      label='Account slug'
+                      placeholder='Insert your account slug'
+                      hint='You can find it on your profile url https://trustfolio.co/profil/[SLUG]'
                       error={error}
                       {...input}
                     />

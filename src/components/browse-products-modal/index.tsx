@@ -20,6 +20,7 @@ const BrowseProductsModal = ({ctx}: {ctx: RenderModalCtx}) => {
   const apiToken = ctx.plugin.attributes.parameters.apiToken as string
   const locales = ctx.plugin.attributes.parameters.locales as string
   const corsUrlPrefix = ctx.plugin.attributes.parameters.corsUrlPrefix as string
+  const slug = ctx.plugin.attributes.parameters.slug as string
 
   useEffect(() => {
     setLoading(true)
@@ -27,7 +28,7 @@ const BrowseProductsModal = ({ctx}: {ctx: RenderModalCtx}) => {
     const getReferences = async () => {
       const arrayOfPromises = locales
         .split(',')
-        .map(async (lang) => fetchTrustfolioData({lang}, corsUrlPrefix, apiToken))
+        .map(async (lang) => fetchTrustfolioData({lang, slug}, corsUrlPrefix, apiToken))
 
       return Promise.all(arrayOfPromises)
     }
@@ -40,7 +41,7 @@ const BrowseProductsModal = ({ctx}: {ctx: RenderModalCtx}) => {
       )
       setLoading(false)
     })
-  }, [apiToken, corsUrlPrefix, locales])
+  }, [apiToken, corsUrlPrefix, locales, slug])
 
   const handleValidation = async (review: ReviewProps) => {
     await ctx.resolve(review)
@@ -59,7 +60,7 @@ const BrowseProductsModal = ({ctx}: {ctx: RenderModalCtx}) => {
         <form className={style.empty__search}>
           <div className={style.empty__search__input}>
             <TextInput
-              placeholder='Search for brand name...'
+              placeholder='Search for a customer…'
               id='searchValue'
               name='searchValue'
               value={searchValue}
