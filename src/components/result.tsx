@@ -26,7 +26,17 @@ const Result = ({ctx}: PropTypes) => {
   }, [ctx])
 
   const handleSelect: OnSelectType = async (value) => {
-    await ctx.setFieldValue(ctx.fieldPath, value ? JSON.stringify(value) : '')
+    await ctx.setFieldValue(
+      ctx.fieldPath,
+      value
+        ? JSON.stringify({
+            id: value.id,
+            organization: value.organization,
+            meta: {social: {url: value.meta.social.url}},
+            testimony: value.testimony,
+          })
+        : '',
+    )
   }
 
   const handleReset: OnSelectType = async () => {
