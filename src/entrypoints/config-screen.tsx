@@ -50,9 +50,9 @@ const ConfigScreen = ({ctx}: Props) => {
                     <TextField
                       required
                       id='apiToken'
-                      label='Trustfolio personal token'
+                      label='Trustfolio access token'
                       placeholder='XXX'
-                      hint='Please insert your Trustfolio personal access token.'
+                      hint='Please insert your Trustfolio access token.'
                       error={error}
                       {...input}
                     />
