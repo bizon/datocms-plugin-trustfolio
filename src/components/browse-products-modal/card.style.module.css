@@ -1,0 +1,88 @@
+.card {
+    width: 100%;
+    border: 1px solid var(--border-color);
+    text-align: center;
+    padding: 20px;
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.card__form {
+    display: flex;
+    align-items: center;
+}
+
+.card__info__text {
+    margin-left: 5px;
+}
+
+.card__form__image {
+    width: 60px;
+    margin-right: 8px;
+}
+
+.card__form__info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.card__form__title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 3px;
+    display: flex;
+    align-items: center;
+}
+
+.card__form__title a {
+    font-size: 17px;
+    text-decoration: none;
+}
+
+.card__form__title a:hover {
+    text-decoration: underline;
+}
+
+.card__form__title a:after {
+    content: '';
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    background: url('../selected-values/external-link.svg') center center;
+    background-size: contain;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+
+.card__review__container {
+    display: flex;
+}
+
+.card__form__description__container {
+    padding: 10px;
+    display: flex;
+    flex-basis: 50%;
+    margin-left: 5px;
+    margin-right: 5px;
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+}
+
+.card__form__description__container:hover {
+    border: 1px solid var(--accent-color);
+}
+
+.card__form__description {
+    margin: 0px;
+    font-size: 0.9em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* number of lines to show */
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
