@@ -2,7 +2,7 @@ import React from 'react'
 import {CardProps} from '../../types'
 import style from './card.style.module.css'
 
-const Card = ({value, onSelect}: CardProps) => {
+function Card({value, onSelect}: CardProps) {
   return (
     <div className={style.card}>
       <div className={style.card__form}>

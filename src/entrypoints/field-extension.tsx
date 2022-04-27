@@ -9,7 +9,7 @@ type PropTypes = {
   ctx: RenderFieldExtensionCtx
 }
 
-const FieldExtension = ({ctx}: PropTypes) => {
+function FieldExtension({ctx}: PropTypes) {
   const parameters = ctx.plugin.attributes.parameters as ConfigParameters
 
   if (!('apiToken' in parameters)) {

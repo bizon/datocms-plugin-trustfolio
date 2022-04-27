@@ -11,11 +11,11 @@ import Card from './card'
 
 import style from './styles.module.css'
 
-const BrowseProductsModal = ({ctx}: {ctx: RenderModalCtx}) => {
+function BrowseProductsModal({ctx}: {ctx: RenderModalCtx}) {
   const [searchValue, setSearchValue] = useState<string>('')
   const [data, setData] = useState<any[]>([])
-  const [filteredReviews, setFilterReviews] = useState<any[]>([])
-  const [isLoading, setLoading] = useState(false)
+  const [filteredReviews, setFilteredReviews] = useState<any[]>([])
+  const [isLoading, setIsLoading] = useState(false)
 
   const apiToken = ctx.plugin.attributes.parameters.apiToken as string
   const locales = ctx.plugin.attributes.parameters.locales as string
@@ -23,7 +23,7 @@ const BrowseProductsModal = ({ctx}: {ctx: RenderModalCtx}) => {
   const slug = ctx.plugin.attributes.parameters.slug as string
 
   useEffect(() => {
-    setLoading(true)
+    setIsLoading(true)
 
     const getReferences = async () => {
       const arrayOfPromises = locales
@@ -39,7 +39,7 @@ const BrowseProductsModal = ({ctx}: {ctx: RenderModalCtx}) => {
       setData(
         sortBy(result, (review: ReviewProps) => deburr(review.organization.name).toLowerCase()),
       )
-      setLoading(false)
+      setIsLoading(false)
     })
   }, [apiToken, corsUrlPrefix, locales, slug])
 
@@ -51,7 +51,7 @@ const BrowseProductsModal = ({ctx}: {ctx: RenderModalCtx}) => {
     const filteredData = data.filter((review: ReviewProps) =>
       review.organization.name.toLowerCase().includes(searchValue.toLowerCase()),
     )
-    setFilterReviews(filteredData)
+    setFilteredReviews(filteredData)
   }, [searchValue, data])
 
   return (

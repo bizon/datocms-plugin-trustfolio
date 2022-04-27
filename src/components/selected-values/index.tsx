@@ -2,7 +2,7 @@ import React from 'react'
 import {ValueProps} from '../../types'
 import style from './styles.module.css'
 
-const Value = ({value, onReset}: ValueProps) => {
+function Value({value, onReset}: ValueProps) {
   return (
     <div key={value.id} className={style.value}>
       <div className={style.value__form}>
