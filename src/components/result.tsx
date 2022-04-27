@@ -16,7 +16,7 @@ const stateFromPlugin = ({ctx}: PropTypes): {apiToken: string; value: string | u
   value: get(ctx.formValues, ctx.fieldPath) as string | undefined,
 })
 
-const Result = ({ctx}: PropTypes) => {
+function Result({ctx}: PropTypes) {
   const [value, setValue] = useState<string | undefined>()
 
   useEffect(() => {

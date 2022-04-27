@@ -10,7 +10,7 @@ type Props = {
   ctx: RenderConfigScreenCtx
 }
 
-const ConfigScreen = ({ctx}: Props) => {
+function ConfigScreen({ctx}: Props) {
   return (
     <Canvas ctx={ctx}>
       <div className={style.inspector}>
