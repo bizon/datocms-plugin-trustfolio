@@ -3,7 +3,7 @@ export async function fetchTrustfolioData(
   corsProxy: string,
   apiToken: string,
 ) {
-  const result = await fetch(corsProxy + 'https://trustfolio.co/api/profil/', {
+  const result = await fetch('https://trustfolio.co/api/profil/', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
