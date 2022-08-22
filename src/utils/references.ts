@@ -3,7 +3,7 @@ export async function fetchTrustfolioData(
   corsProxy: string,
   apiToken: string,
 ) {
-  const result = await fetch('https://trustfolio.co/api/profil/', {
+  const result = await fetch('/api?endpoint=https://trustfolio.co/api/profil/', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -50,12 +50,12 @@ export async function fetchTrustfolioData(
       `,
       variables,
     }),
-  })
+  }).then(async (response) => response.json())
 
-  const json = await result.json()
-  if (json.errors) {
+  if (result.errors) {
+    console.log(result.errors)
     throw new Error('Failed to fetch trustfolio api')
   }
 
-  return json.data.profile.references
+  return result.data.profile.references
 }

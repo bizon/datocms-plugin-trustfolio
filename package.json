@@ -28,7 +28,9 @@
     "datocms-plugin-sdk": "^0.6.1",
     "datocms-react-ui": "^0.6.0",
     "final-form": "^4.20.7",
+    "axios": "^0.27.2",
     "lodash": "^4.17.21",
+    "node-fetch": "2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-final-form": "^6.5.9"
