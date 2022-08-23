@@ -1,5 +1,5 @@
 export async function fetchTrustfolioData(variables: Record<string, unknown>, apiToken: string) {
-  const result = await fetch('/api?endpoint=https://trustfolio.co/api/profil/', {
+  const result = await fetch('/api', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
