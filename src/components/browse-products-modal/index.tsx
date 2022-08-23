@@ -19,7 +19,6 @@ function BrowseProductsModal({ctx}: {ctx: RenderModalCtx}) {
 
   const apiToken = ctx.plugin.attributes.parameters.apiToken as string
   const locales = ctx.plugin.attributes.parameters.locales as string
-  const corsUrlPrefix = ctx.plugin.attributes.parameters.corsUrlPrefix as string
   const slug = ctx.plugin.attributes.parameters.slug as string
 
   useEffect(() => {
@@ -28,7 +27,7 @@ function BrowseProductsModal({ctx}: {ctx: RenderModalCtx}) {
     const getReferences = async () => {
       const arrayOfPromises = locales
         .split(',')
-        .map(async (lang) => fetchTrustfolioData({lang, slug}, corsUrlPrefix, apiToken))
+        .map(async (lang) => fetchTrustfolioData({lang, slug}, apiToken))
 
       return Promise.all(arrayOfPromises)
     }
@@ -41,7 +40,7 @@ function BrowseProductsModal({ctx}: {ctx: RenderModalCtx}) {
       )
       setIsLoading(false)
     })
-  }, [apiToken, corsUrlPrefix, locales, slug])
+  }, [apiToken, locales, slug])
 
   const handleValidation = async (review: ReviewProps) => {
     await ctx.resolve(review)

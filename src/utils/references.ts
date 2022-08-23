@@ -1,8 +1,4 @@
-export async function fetchTrustfolioData(
-  variables: Record<string, unknown>,
-  corsProxy: string,
-  apiToken: string,
-) {
+export async function fetchTrustfolioData(variables: Record<string, unknown>, apiToken: string) {
   const result = await fetch('/api?endpoint=https://trustfolio.co/api/profil/', {
     method: 'POST',
     headers: {

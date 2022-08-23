@@ -12,15 +12,6 @@ const handler = async (request, response) => {
     return
   }
 
-  if (!Number.isNaN(Number.parseInt(endpoint, 10)) || typeof endpoint !== 'string') {
-    const out = {
-      error: 'Endpoint parameter must be a string!',
-    }
-
-    response.status(400).json(out)
-    return
-  }
-
   try {
     const result = await fetch(endpoint, {
       method: 'POST',

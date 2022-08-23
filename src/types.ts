@@ -5,7 +5,6 @@ export type FirstInstallationParameters = Record<string, unknown>
 export type ValidParameters = {
   apiToken: string
   locales: string
-  corsUrlPrefix: string
   slug: string
 }
 

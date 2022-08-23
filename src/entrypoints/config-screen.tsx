@@ -23,10 +23,6 @@ function ConfigScreen({ctx}: Props) {
               errors.apiToken = 'This field is required!'
             }
 
-            if (!('corsUrlPrefix' in values) || !values.corsUrlPrefix) {
-              errors.corsUrlPrefix = 'This field is required!'
-            }
-
             if (!('locales' in values) || !values.locales) {
               errors.locales = 'This field is required!'
             }
@@ -53,19 +49,6 @@ function ConfigScreen({ctx}: Props) {
                       label='Trustfolio access token'
                       placeholder='XXX'
                       hint='Please insert your Trustfolio access token.'
-                      error={error}
-                      {...input}
-                    />
-                  )}
-                </Field>
-                <Field name='corsUrlPrefix'>
-                  {({input, meta: {error}}) => (
-                    <TextField
-                      required
-                      id='corsUrlPrefix'
-                      label='CORS proxy service'
-                      placeholder='CORS proxy service'
-                      hint='Since Trustfolio API does not support CORS, a CORS proxy is required.'
                       error={error}
                       {...input}
                     />
