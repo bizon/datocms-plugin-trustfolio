@@ -3467,6 +3467,15 @@ datocms-plugin-sdk@^0.5.2:
     datocms-structured-text-utils "^2.0.0"
     penpal "^4.1.1"
 
+datocms-plugin-sdk@^0.6.1:
+  version "0.6.1"
+  resolved "https://registry.yarnpkg.com/datocms-plugin-sdk/-/datocms-plugin-sdk-0.6.1.tgz#d5c9aab08e61fddb0289bc7ab1476c7e032d1fb7"
+  integrity sha512-NYkVQNuCUJ7bIIPjiBRLrVlQiL5S/TZmQmv7UmFaN37JCf8dhNDlQqhlExTEhVoBSENBKPOElb6hWwkBGcdFTA==
+  dependencies:
+    "@types/react" "^17.0.3"
+    datocms-structured-text-utils "^2.0.0"
+    penpal "^4.1.1"
+
 datocms-react-ui@^0.5.2:
   version "0.5.2"
   resolved "https://registry.npmjs.org/datocms-react-ui/-/datocms-react-ui-0.5.2.tgz"
