@@ -26,3 +26,24 @@ jobs:
 
       - name: Run linter
         run: yarn xo
+
+  check-ts:
+    name: Run typescript checks
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Git checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: yarn
+
+      - name: Install dependencies
+        run: yarn --frozen-lockfile --non-interactive --prefer-offline
+
+      - name: Run typescript checks
+        run: yarn check:ts
