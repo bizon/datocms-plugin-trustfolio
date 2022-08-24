@@ -1,11 +1,11 @@
+import {connect, type OnBootCtx, type RenderModalCtx} from 'datocms-plugin-sdk'
+import type {PluginAttributes} from 'datocms-plugin-sdk/dist/types/SiteApiSchema'
 import React from 'react'
-import {connect, RenderModalCtx, OnBootCtx} from 'datocms-plugin-sdk'
-import {PluginAttributes} from 'datocms-plugin-sdk/dist/types/SiteApiSchema'
 
-import {render} from './utils/render'
+import BrowseProductsModal from './components/browse-products-modal'
 import ConfigScreen from './entrypoints/config-screen'
 import FieldExtension from './entrypoints/field-extension'
-import BrowseProductsModal from './components/browse-products-modal'
+import {render} from './utils/render'
 
 import 'datocms-react-ui/styles.css'
 

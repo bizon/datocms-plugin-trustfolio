@@ -1,14 +1,13 @@
 import {RenderModalCtx} from 'datocms-plugin-sdk'
-import React, {useEffect, useState} from 'react'
-import {TextInput, Canvas} from 'datocms-react-ui'
+import {Canvas, TextInput} from 'datocms-react-ui'
 import {deburr, sortBy} from 'lodash'
+import React, {useEffect, useState} from 'react'
 
 import {ReviewProps, SelectReviewProps} from '../../types'
 import {groupReviewsById} from '../../utils/group-reviews-by-id'
 import {fetchTrustfolioData} from '../../utils/references'
 
 import Card from './card'
-
 import style from './styles.module.css'
 
 function BrowseProductsModal({ctx}: {ctx: RenderModalCtx}) {
