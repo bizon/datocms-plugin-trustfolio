@@ -3458,16 +3458,7 @@ data-urls@^2.0.0:
     whatwg-mimetype "^2.3.0"
     whatwg-url "^8.0.0"
 
-datocms-plugin-sdk@^0.5.2:
-  version "0.5.2"
-  resolved "https://registry.npmjs.org/datocms-plugin-sdk/-/datocms-plugin-sdk-0.5.2.tgz"
-  integrity sha512-0JuGUz5FoGk1Z+XCE9IPnJgs+a/44rsBLGYxyeg3PD7mM5Wtd8y3RNyM49VSEurXrZinzo2NBbyD0ku8GQHSsQ==
-  dependencies:
-    "@types/react" "^17.0.3"
-    datocms-structured-text-utils "^2.0.0"
-    penpal "^4.1.1"
-
-datocms-plugin-sdk@^0.6.1:
+datocms-plugin-sdk@^0.6.0, datocms-plugin-sdk@^0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/datocms-plugin-sdk/-/datocms-plugin-sdk-0.6.1.tgz#d5c9aab08e61fddb0289bc7ab1476c7e032d1fb7"
   integrity sha512-NYkVQNuCUJ7bIIPjiBRLrVlQiL5S/TZmQmv7UmFaN37JCf8dhNDlQqhlExTEhVoBSENBKPOElb6hWwkBGcdFTA==
@@ -3476,13 +3467,13 @@ datocms-plugin-sdk@^0.6.1:
     datocms-structured-text-utils "^2.0.0"
     penpal "^4.1.1"
 
-datocms-react-ui@^0.5.2:
-  version "0.5.2"
-  resolved "https://registry.npmjs.org/datocms-react-ui/-/datocms-react-ui-0.5.2.tgz"
-  integrity sha512-3mTxjejz2iJLZaqnrMS5dHtPdFNSH2Y2en6zyLjfu/fQ6ISDW81Sztj10t2KjuoZqCldZij6BFLJZJhDBDGrDA==
+datocms-react-ui@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/datocms-react-ui/-/datocms-react-ui-0.6.0.tgz#a472c1d0165415a083a80ba528c20b29434a5085"
+  integrity sha512-gOnDy32sn16l1hD0VDoI7oTj7j19+P81OBeKuQCeVCyqvHJ1krjzy4EBlvlHUGT7lpiNKft9TPG30UgoPIL0aw==
   dependencies:
     classnames "^2.3.1"
-    datocms-plugin-sdk "^0.5.2"
+    datocms-plugin-sdk "^0.6.0"
     react-intersection-observer "^8.31.0"
     react-select "^5.2.1"
     scroll-into-view-if-needed "^2.2.20"
