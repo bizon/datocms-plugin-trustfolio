@@ -7,6 +7,7 @@
     "node": "16.x"
   },
   "scripts": {
+    "check:ts": "tsc --noEmit",
     "start": "cross-env BROWSER='none' PUBLIC_URL='/' react-scripts start",
     "build": "cross-env PUBLIC_URL='.' react-scripts build",
     "test": "react-scripts test",
@@ -31,15 +32,15 @@
     "final-form": "^4.20.7",
     "lodash": "^4.17.21",
     "node-fetch": "^3.2.10",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-final-form": "^6.5.9"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.184",
     "@types/node": "^16.11.56",
-    "@types/react": "^17.0.39",
-    "@types/react-dom": "^17.0.11",
+    "@types/react": "^18.0.17",
+    "@types/react-dom": "^18.0.6",
     "cross-env": "^7.0.3",
     "eslint-config-xo-bizon": "^1.0.1",
     "eslint-config-xo-react": "^0.27.0",
@@ -60,7 +61,8 @@
       "browser"
     ],
     "rules": {
-      "@typescript-eslint/triple-slash-reference": "off"
+      "@typescript-eslint/triple-slash-reference": "off",
+      "n/file-extension-in-import": "off"
     }
   },
   "prettier": {

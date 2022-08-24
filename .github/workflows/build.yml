@@ -24,5 +24,5 @@ jobs:
       - name: Install dependencies
         run: yarn --frozen-lockfile --non-interactive --prefer-offline
 
-      - name: Run linter
+      - name: Build output
         run: yarn build
