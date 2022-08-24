@@ -1,5 +1,7 @@
 import React from 'react'
+
 import {CardProps} from '../../types'
+
 import style from './card.style.module.css'
 
 function Card({value, onSelect}: CardProps) {

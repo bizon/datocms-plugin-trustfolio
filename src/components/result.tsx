@@ -1,11 +1,11 @@
 import {RenderFieldExtensionCtx} from 'datocms-plugin-sdk'
-import React, {useEffect, useState} from 'react'
 import get from 'lodash/get'
+import React, {useEffect, useState} from 'react'
 
 import {OnSelectType} from '../types'
 
-import Value from './selected-values'
 import Empty from './empty-result'
+import Value from './selected-values'
 
 type PropTypes = {
   ctx: RenderFieldExtensionCtx

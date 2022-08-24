@@ -1,5 +1,7 @@
 import React from 'react'
+
 import {ValueProps} from '../../types'
+
 import style from './styles.module.css'
 
 function Value({value, onReset}: ValueProps) {

@@ -11,7 +11,7 @@
     "build": "cross-env PUBLIC_URL='.' react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "yarn build"
   },
   "browserslist": {
     "production": [
@@ -41,6 +41,7 @@
     "@types/react": "^17.0.39",
     "@types/react-dom": "^17.0.11",
     "cross-env": "^7.0.3",
+    "eslint-config-xo-bizon": "^1.0.1",
     "eslint-config-xo-react": "^0.27.0",
     "eslint-plugin-react": "^7.30.1",
     "react-scripts": "^5.0.1",
@@ -48,7 +49,10 @@
     "xo": "^0.51.0"
   },
   "xo": {
-    "extends": "xo-react",
+    "extends": [
+      "xo-bizon",
+      "xo-react"
+    ],
     "semicolon": false,
     "space": 2,
     "prettier": true,
@@ -56,16 +60,7 @@
       "browser"
     ],
     "rules": {
-      "@typescript-eslint/no-unsafe-argument": "off",
-      "@typescript-eslint/no-unsafe-assignment": "off",
-      "@typescript-eslint/no-unsafe-call": "off",
-      "@typescript-eslint/no-unsafe-member-access": "off",
-      "@typescript-eslint/no-unsafe-return": "off",
-      "@typescript-eslint/triple-slash-reference": "off",
-      "import/extensions": "off",
-      "react/boolean-prop-naming": "off",
-      "unicorn/prefer-node-protocol": "off",
-      "unicorn/no-array-reduce": "off"
+      "@typescript-eslint/triple-slash-reference": "off"
     }
   },
   "prettier": {
