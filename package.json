@@ -44,7 +44,7 @@
     "cross-env": "^7.0.3",
     "eslint-config-xo-bizon": "^1.0.1",
     "eslint-config-xo-react": "^0.27.0",
-    "eslint-plugin-react": "^7.30.1",
+    "eslint-plugin-react": "^7.31.1",
     "react-scripts": "^5.0.1",
     "typescript": "^4.8.2",
     "xo": "^0.51.0"
