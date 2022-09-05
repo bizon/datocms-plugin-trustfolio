@@ -5,11 +5,11 @@ import React from 'react'
 import Result from '../components/result'
 import {ConfigParameters} from '../types'
 
-type PropTypes = {
+interface FieldExtensionProps {
   ctx: RenderFieldExtensionCtx
 }
 
-function FieldExtension({ctx}: PropTypes) {
+function FieldExtension({ctx}: FieldExtensionProps) {
   const parameters = ctx.plugin.attributes.parameters as ConfigParameters
 
   if (!('apiToken' in parameters)) {

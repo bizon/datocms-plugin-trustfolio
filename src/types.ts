@@ -2,7 +2,7 @@ import {RenderFieldExtensionCtx} from 'datocms-plugin-sdk'
 
 export type FirstInstallationParameters = Record<string, unknown>
 
-export type ValidParameters = {
+export interface ValidParameters {
   apiToken: string
   locales: string
   slug: string
@@ -12,22 +12,22 @@ export type ConfigParameters = FirstInstallationParameters | ValidParameters
 
 export type OnSelectType = (value?: any) => void
 
-export type EmptyProps = {
+export interface EmptyProps {
   ctx: RenderFieldExtensionCtx
   onSelect: OnSelectType
 }
 
-export type ValueProps = {
+export interface ValueProps {
   value: ReviewProps
   onReset: () => void
 }
 
-export type CardProps = {
+export interface CardProps {
   value: SelectReviewProps
   onSelect: (value: any) => void
 }
 
-export type SelectReviewProps = {
+export interface SelectReviewProps {
   id: string
   organization: {
     name: string
@@ -50,7 +50,7 @@ export type SelectReviewProps = {
   ]
 }
 
-export type ReviewProps = {
+export interface ReviewProps {
   id: string
   organization: {
     name: string

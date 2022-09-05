@@ -7,16 +7,16 @@ import {OnSelectType} from '../types'
 import Empty from './empty-result'
 import Value from './selected-values'
 
-type PropTypes = {
+interface ResultProps {
   ctx: RenderFieldExtensionCtx
 }
 
-const stateFromPlugin = ({ctx}: PropTypes): {apiToken: string; value: string | undefined} => ({
+const stateFromPlugin = ({ctx}: ResultProps): {apiToken: string; value: string | undefined} => ({
   apiToken: ctx.plugin.attributes.parameters.apiToken as string,
   value: get(ctx.formValues, ctx.fieldPath) as string | undefined,
 })
 
-function Result({ctx}: PropTypes) {
+function Result({ctx}: ResultProps) {
   const [value, setValue] = useState<string | undefined>()
 
   useEffect(() => {

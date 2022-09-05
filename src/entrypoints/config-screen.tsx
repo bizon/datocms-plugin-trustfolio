@@ -7,17 +7,17 @@ import {ConfigParameters} from '../types'
 
 import style from './styles.module.css'
 
-type Props = {
+interface ConfigScreenProps {
   ctx: RenderConfigScreenCtx
 }
 
-function ConfigScreen({ctx}: Props) {
+function ConfigScreen({ctx}: ConfigScreenProps) {
   return (
     <Canvas ctx={ctx}>
       <div className={style.inspector}>
         <FormHandler<ConfigParameters>
           initialValues={ctx.plugin.attributes.parameters}
-          validate={(values: ConfigParameters) => {
+          validate={(values) => {
             const errors: Record<string, string> = {}
 
             if (!('apiToken' in values) || !values.apiToken) {
@@ -34,8 +34,8 @@ function ConfigScreen({ctx}: Props) {
 
             return errors
           }}
-          onSubmit={async (values: ConfigParameters) => {
-            await ctx.updatePluginParameters(values)
+          onSubmit={async (values) => {
+            await ctx.updatePluginParameters(values as Record<string, unknown>)
             await ctx.notice('Settings updated successfully!')
           }}
         >
