@@ -1,4 +1,4 @@
-import {ReviewProps} from '../types'
+import type {ReviewProps} from '../types'
 
 export async function groupReviewsById(reviews: ReviewProps[]) {
   const object: any = {}

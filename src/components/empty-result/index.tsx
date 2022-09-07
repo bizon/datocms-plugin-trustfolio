@@ -1,7 +1,7 @@
 import {Button} from 'datocms-react-ui'
 import React from 'react'
 
-import {EmptyProps} from '../../types'
+import type {EmptyProps} from '../../types'
 
 import style from './styles.module.css'
 
