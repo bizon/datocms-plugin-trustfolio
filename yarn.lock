@@ -3450,10 +3450,10 @@ data-urls@^2.0.0:
     whatwg-mimetype "^2.3.0"
     whatwg-url "^8.0.0"
 
-datocms-plugin-sdk@^0.6.1, datocms-plugin-sdk@^0.6.4:
-  version "0.6.4"
-  resolved "https://registry.yarnpkg.com/datocms-plugin-sdk/-/datocms-plugin-sdk-0.6.4.tgz#49a1a01784b17d171805a420b31e864b04316584"
-  integrity sha512-OchaiVK6H8riP+pNHDf10WMkPlOVsZGRoRZHfcQn2ITh3+0TDUhk6gzGIlw1XHEMlpM6hArC/VvjPUNMXm4TmA==
+datocms-plugin-sdk@^0.6.12, datocms-plugin-sdk@^0.6.4:
+  version "0.6.12"
+  resolved "https://registry.yarnpkg.com/datocms-plugin-sdk/-/datocms-plugin-sdk-0.6.12.tgz#16ee19100cf31098ffbe502c5257a68d617099d3"
+  integrity sha512-QbLuF/s4dhS9RepiAY6vcM95RGZ93wkqTjsTFWoN4sclCeyLSkvZYVwRuGJVpPYIiUm2CA1xV7/sxInVlQzyFA==
   dependencies:
     "@types/react" "^17.0.3"
     datocms-structured-text-utils "^2.0.0"
